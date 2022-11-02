@@ -1,0 +1,8 @@
+name: Github Actions Demo
+on: [push]
+  jobs:
+    runs-on:ubuntu-latest
+    steps:
+    - run: echo "Hello World"
+    - run: echo $PWD
+    - run: ls 
