@@ -1,9 +1,24 @@
 name: Github Actions Demo
 on: [push]
 jobs:
-  actions_demo:
+  job_run_python:
     runs-on: ubuntu-latest
     steps:
-    - run: echo "Hello World"
-    - run: echo $PWD
-    - run: ls 
+    - name: Checkout
+      uses: actions/checkout@v2.5.0
+    - run: python3 hiya.py
+    
+  job_create_directory:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2.5.0
+    -run: mkdir new_directory
+    
+  job_add_new_line:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2.5.0
+    - run: echo "print ('Hello Mars')" >> hiya.py
+    - run: python3 hiya.py
